@@ -1,5 +1,6 @@
 package net.simplifiedcoding.ui.home.list
 
+import androidx.navigation.Navigation
 import com.xwray.groupie.databinding.BindableItem
 import net.simplifiedcoding.R
 import net.simplifiedcoding.data.db.entities.Employee
@@ -13,5 +14,9 @@ class EmployeeItem(
 
     override fun bind(viewBinding: LayoutEmployeeBinding, position: Int) {
         viewBinding.employee = employee
+        viewBinding.root.setOnClickListener {
+            val action = EmployeeListFragmentDirections.actionEmployeeDetail(employee)
+            Navigation.findNavController(it).navigate(action)
+        }
     }
 }

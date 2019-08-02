@@ -6,5 +6,19 @@
 
     <fragment android:id="@+id/employeeListFragment"
               android:name="net.simplifiedcoding.ui.home.list.EmployeeListFragment"
-              android:label="Employees" tools:layout="@layout/employee_list_fragment"/>
+              android:label="Employees" tools:layout="@layout/employee_list_fragment">
+        <action android:id="@+id/action_employee_detail"
+                app:destination="@id/employeeDetailFragment"/>
+
+    </fragment>
+    <fragment android:id="@+id/employeeDetailFragment"
+              android:name="net.simplifiedcoding.ui.home.detail.EmployeeDetailFragment"
+              android:label="Employee Details" tools:layout="@layout/employee_detail_fragment">
+
+        <argument
+                android:name="employee"
+                app:argType="net.simplifiedcoding.data.db.entities.Employee"
+                app:nullable="true"/>
+
+    </fragment>
 </navigation>

@@ -6,14 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.navArgs
 
 import net.simplifiedcoding.R
 
 class EmployeeDetailFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = EmployeeDetailFragment()
-    }
 
     private lateinit var viewModel: EmployeeDetailViewModel
 
@@ -27,7 +25,8 @@ class EmployeeDetailFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(EmployeeDetailViewModel::class.java)
-        // TODO: Use the ViewModel
+
+//        val args = arguments.EmployeeDetailFragmentArgs().employee
     }
 
 }

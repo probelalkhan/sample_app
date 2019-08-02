@@ -6,9 +6,10 @@
         android:layout_height="match_parent"
         tools:context=".ui.home.detail.EmployeeDetailFragment">
 
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Hello"/>
+    <Button
+            android:text="Take Picture"
+            android:id="@+id/button_take_picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
 </FrameLayout>
