@@ -11,5 +11,8 @@ interface UserDao {
     suspend fun upsert(user: User)
 
     @Query("SELECT * FROM user WHERE id = 0")
-    fun getCurrentUser() : LiveData<User>
+    fun getCurrentUser(): LiveData<User>
+
+    @Query("DELETE FROM user")
+    fun deleteUser()
 }

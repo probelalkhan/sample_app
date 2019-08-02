@@ -21,7 +21,17 @@ class AppRepository(
 
     fun findEmployeeByName(query: String) = db.getEmployeeDao().findEmployeeByName(query)
 
-    fun logout() = db.clearAllTables()
+    fun logout() = db.getUserDao().deleteUser()
 
     suspend fun saveUser(user: User) = db.getUserDao().upsert(user)
+
+    fun updateEmployee(employee: Employee) = db.getEmployeeDao().update(employee)
+
+    fun findEmployee(id: String) = db.getEmployeeDao().findEmployee(id)
+
+    fun getTopTenEmployees() = db.getEmployeeDao().getTopTenEmployees()
+
+    fun getEmployeeLiveData() = db.getEmployeeDao().getEmployeesLiveData()
+
+    fun deleteUser() = db.getUserDao().deleteUser()
 }

@@ -10,4 +10,11 @@
     <string name="forget_password">Forget Password?</string>
     <string name="logout">Logout</string>
     <string name="search">Search</string>
+    <string name="employee_id">Employee ID</string>
+    <string name="name">Name</string>
+    <string name="designation">Designation</string>
+    <string name="joiningdate">Joining Date</string>
+    <string name="salary">Salary</string>
+    <string name="picture_updated_at">Photo Taken At</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

@@ -17,8 +17,11 @@
 
         <argument
                 android:name="employee"
-                app:argType="net.simplifiedcoding.data.db.entities.Employee"
-                app:nullable="true"/>
+                app:argType="net.simplifiedcoding.data.db.entities.Employee"/>
 
     </fragment>
+    <fragment android:id="@+id/barGraphFragment" android:name="net.simplifiedcoding.ui.home.bargraph.BarGraphFragment"
+              android:label="Top 10 Employees" tools:layout="@layout/bar_graph_fragment"/>
+    <fragment android:id="@+id/mapFragment" android:name="net.simplifiedcoding.ui.home.map.MapFragment"
+              android:label="Map" tools:layout="@layout/map_fragment"/>
 </navigation>

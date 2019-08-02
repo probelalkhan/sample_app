@@ -8,7 +8,10 @@ import net.simplifiedcoding.data.preference.PreferenceProvider
 import net.simplifiedcoding.data.repository.AppRepository
 import net.simplifiedcoding.ui.auth.LoginViewModelFactory
 import net.simplifiedcoding.ui.home.HomeViewModelFactory
+import net.simplifiedcoding.ui.home.detail.BarGraphViewModelFactory
+import net.simplifiedcoding.ui.home.detail.EmployeeDetailViewModelFactory
 import net.simplifiedcoding.ui.home.list.EmployeeListViewModelFactory
+import net.simplifiedcoding.ui.home.map.MapViewModelFactory
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.androidXModule
@@ -30,6 +33,9 @@ class TVSAutomobileApplication : Application(), KodeinAware {
         bind() from provider { LoginViewModelFactory(instance()) }
         bind() from provider { HomeViewModelFactory(instance()) }
         bind() from provider { EmployeeListViewModelFactory(instance()) }
+        bind() from provider { EmployeeDetailViewModelFactory(instance()) }
+        bind() from provider { BarGraphViewModelFactory(instance()) }
+        bind() from provider { MapViewModelFactory(instance()) }
 
 
     }

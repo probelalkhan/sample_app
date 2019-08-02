@@ -30,6 +30,7 @@ class HomeActivity : AppCompatActivity(), KodeinAware {
         setContentView(R.layout.activity_home)
 
         setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
         val navController = Navigation.findNavController(this, R.id.fragment)
         NavigationUI.setupWithNavController(nav_view, navController)
@@ -67,9 +68,12 @@ class HomeActivity : AppCompatActivity(), KodeinAware {
                     }
                     alertDialogBuilder.setNegativeButton("Cancel") { _, _ -> }
                 }.create().show()
+                return true
+            }
+            else -> {
+                return false
             }
         }
-        return true
     }
 
     override fun onDestroy() {
