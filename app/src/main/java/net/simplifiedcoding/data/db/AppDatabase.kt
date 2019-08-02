@@ -5,16 +5,19 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import net.simplifiedcoding.data.db.daos.EmployeeDao
+import net.simplifiedcoding.data.db.daos.UserDao
 import net.simplifiedcoding.data.db.entities.Employee
+import net.simplifiedcoding.data.db.entities.User
 
 
 @Database(
-    entities = [Employee::class],
+    entities = [Employee::class, User::class],
     version = 1
 )
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun getEmployeeDao(): EmployeeDao
+    abstract fun getUserDao(): UserDao
 
     companion object {
 

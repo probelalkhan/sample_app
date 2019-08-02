@@ -1,14 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<layout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         tools:context=".ui.home.list.EmployeeListFragment">
 
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Hello"/>
+    <data>
+        <variable name="viewmodel"
+                  type="net.simplifiedcoding.ui.home.list.EmployeeListViewModel"/>
+    </data>
 
-</FrameLayout>
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        <RelativeLayout
+                android:background="@color/colorEditTextSearch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            <EditText
+                    android:textAlignment="center"
+                    android:padding="8dp"
+                    android:onTextChanged="@{(text, start, before, count) -> viewmodel.onSearchTextChange(text)}"
+                    android:background="@drawable/edit_text_search_drawable"
+                    android:layout_margin="8dp"
+                    android:hint="@string/search"
+                    android:id="@+id/edit_text_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:layout_below="@id/edit_text_search"
+                    android:id="@+id/recyclerview"
+                    tools:listitem="@layout/layout_employee"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+        </RelativeLayout>
+
+    </FrameLayout>
+</layout>

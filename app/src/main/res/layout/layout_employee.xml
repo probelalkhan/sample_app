@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools">
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable name="employee"
                   type="net.simplifiedcoding.data.db.entities.Employee"/>
@@ -16,11 +16,43 @@
                 android:layout_height="match_parent">
 
             <TextView
-                    tools:text="Belal Khan"
+                    android:text="@{employee.name}"
+                    tools:text="Tiger Nixon"
                     android:id="@+id/text_view_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorBackground" app:fontFamily="@font/allerta"/>
+
+            <TextView
+                    tools:text="System Architect"
+                    android:text="@{employee.designation}"
+                    app:fontFamily="@font/allerta"
+                    android:layout_below="@id/text_view_name"
+                    android:id="@+id/text_view_designation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
+            <TextView
+                    android:text="@{employee.salary}"
+                    tools:text="$320,800"
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/text_view_salary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorBackground" app:fontFamily="@font/allerta"
+                    android:layout_alignParentEnd="true"/>
+
+            <TextView
+                    android:layout_marginTop="12dp"
+                    android:layout_below="@id/text_view_designation"
+                    android:background="@color/colorBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
         </RelativeLayout>
+
     </com.google.android.material.card.MaterialCardView>
+
 </layout>

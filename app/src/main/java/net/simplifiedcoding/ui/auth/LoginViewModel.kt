@@ -18,7 +18,7 @@ class LoginViewModel(
 
     var loginListener: LoginListener? = null
 
-    fun getEmployees() = repository.getEmployees()
+    fun getCurrentUser() = repository.getCurrentUser()
 
     fun onLoginButtonClick() {
         loginListener?.onStarted()
@@ -54,6 +54,7 @@ class LoginViewModel(
                         )
                     )
                 }
+                repository.saveUser(user)
                 repository.saveEmployees(list)
                 loginListener?.onSuccess()
             } catch (e: Exception) {

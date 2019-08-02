@@ -7,4 +7,5 @@
     <color name="colorSplashText">#F0F0F0</color>
     <color name="colorProgressBar">#FFCE511C</color>
     <color name="colorTextView">#83898E</color>
+    <color name="colorEditTextSearch">#FFEAEAEA</color>
 </resources>

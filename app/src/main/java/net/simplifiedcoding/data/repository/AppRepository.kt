@@ -15,7 +15,13 @@ class AppRepository(
 
     suspend fun saveEmployees(employees: List<Employee>) = db.getEmployeeDao().saveAllEmployees(employees)
 
+    fun getCurrentUser() = db.getUserDao().getCurrentUser()
+
     fun getEmployees() = db.getEmployeeDao().getEmployees()
 
+    fun findEmployeeByName(query: String) = db.getEmployeeDao().findEmployeeByName(query)
+
     fun logout() = db.clearAllTables()
+
+    suspend fun saveUser(user: User) = db.getUserDao().upsert(user)
 }

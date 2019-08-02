@@ -9,4 +9,5 @@
     <string name="sign_up">Sign up</string>
     <string name="forget_password">Forget Password?</string>
     <string name="logout">Logout</string>
+    <string name="search">Search</string>
 </resources>

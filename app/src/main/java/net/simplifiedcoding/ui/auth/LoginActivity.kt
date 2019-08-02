@@ -47,8 +47,8 @@ class LoginActivity : AppCompatActivity(), LoginListener, KodeinAware {
         viewModel.loginListener = this
 
 
-        viewModel.getEmployees().observe(this, Observer {
-            if (it.isNotEmpty())
+        viewModel.getCurrentUser().observe(this, Observer {
+            if (it != null)
                 login()
         })
 
